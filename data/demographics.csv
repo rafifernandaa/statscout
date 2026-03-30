@@ -1,0 +1,501 @@
+participant_id,age,gender,education_level,employment_status,annual_income_usd,region,urban_rural
+P0001,58,Male,Master's,Full-time,68544.44,West,Urban
+P0002,45,Male,High school,Full-time,69864.27,West,Urban
+P0003,30,Female,Bachelor's,Full-time,45132.85,Northeast,Suburban
+P0004,28,Female,Some college,Full-time,67573.3,Midwest,Urban
+P0005,42,Male,Master's,Part-time,74501.52,West,Urban
+P0006,42,Male,Some college,Part-time,28680.55,Midwest,Suburban
+P0007,63,Male,Bachelor's,Student,105072.77,Northeast,Urban
+P0008,47,Female,Some college,Full-time,57988.9,Southeast,Suburban
+P0009,62,Non-binary,Bachelor's,Part-time,78906.42,Southeast,Suburban
+P0010,35,Prefer not to say,Bachelor's,Part-time,93280.7,Midwest,Rural
+P0011,67,Male,Master's,Student,55378.27,West,Rural
+P0012,38,Male,Bachelor's,Unemployed,66737.31,Southwest,Urban
+P0013,26,Male,Bachelor's,Full-time,21491.7,Southwest,Urban
+P0014,26,Female,High school,Full-time,38185.47,Northeast,Urban
+P0015,28,Female,Bachelor's,Full-time,8050.26,West,Urban
+P0016,53,Female,High school,Student,111638.98,West,Suburban
+P0017,67,Female,High school,Full-time,9730.8,Midwest,Rural
+P0018,66,Male,PhD,Unemployed,77641.21,Midwest,Rural
+P0019,50,Female,High school,Student,24958.12,West,Rural
+P0020,56,Male,High school,Unemployed,52643.16,Midwest,Urban
+P0021,33,Female,PhD,Full-time,53699.85,West,Suburban
+P0022,26,Female,PhD,Full-time,62732.51,West,Rural
+P0023,45,Non-binary,PhD,Student,49177.65,Southwest,Rural
+P0024,59,Male,Master's,Full-time,29692.98,Southeast,Urban
+P0025,39,Male,Bachelor's,Part-time,96476.84,Northeast,Urban
+P0026,20,Female,High school,Full-time,63558.77,Southwest,Urban
+P0027,26,Female,Master's,Part-time,63095.23,Southwest,Urban
+P0028,24,Female,Some college,Full-time,86875.85,Northeast,Suburban
+P0029,59,Male,Bachelor's,Full-time,72738.05,Southeast,Suburban
+P0030,26,Male,Some college,Full-time,49294.18,Northeast,Suburban
+P0031,72,Female,High school,Retired,91839.42,Southeast,Urban
+P0032,49,Female,Master's,Unemployed,12279.78,Southeast,Urban
+P0033,42,Male,Master's,Full-time,13085.92,West,Suburban
+P0034,49,Male,Some college,Retired,87699.32,West,Suburban
+P0035,21,Female,High school,Part-time,18947.35,Southeast,Urban
+P0036,50,Male,High school,Part-time,61228.87,Southeast,Suburban
+P0037,54,Male,Bachelor's,Part-time,36546.56,West,Urban
+P0038,34,Male,Bachelor's,Full-time,76155.0,Southwest,Urban
+P0039,59,Male,Some college,Student,83872.87,West,Rural
+P0040,22,Female,Bachelor's,Full-time,72722.75,Midwest,Rural
+P0041,33,Male,High school,Unemployed,53291.59,West,Urban
+P0042,70,Female,PhD,Full-time,33020.46,Southeast,Urban
+P0043,24,Female,High school,Full-time,66936.46,Midwest,Suburban
+P0044,34,Female,Master's,Full-time,81546.97,Southwest,Rural
+P0045,20,Male,Master's,Part-time,59285.26,West,Suburban
+P0046,53,Male,High school,Unemployed,98072.03,Southeast,Suburban
+P0047,71,Male,Bachelor's,Full-time,82234.4,Northeast,Rural
+P0048,31,Female,Bachelor's,Full-time,67443.9,West,Rural
+P0049,44,Non-binary,Master's,Unemployed,63090.55,Southeast,Rural
+P0050,19,Male,PhD,Student,75056.5,Southwest,Rural
+P0051,65,Female,Some college,Student,96720.42,Southwest,Urban
+P0052,70,Female,Some college,Student,90030.28,Southeast,Urban
+P0053,60,Male,Some college,Unemployed,79415.53,West,Urban
+P0054,71,Female,PhD,Full-time,58323.65,Midwest,Urban
+P0055,34,Male,Bachelor's,Full-time,67345.46,West,Urban
+P0056,54,Male,High school,Full-time,39054.92,West,Rural
+P0057,52,Female,PhD,Student,69635.76,Midwest,Suburban
+P0058,60,Female,Bachelor's,Full-time,84091.45,Midwest,Suburban
+P0059,38,Male,Some college,Full-time,16149.25,Southeast,Suburban
+P0060,37,Male,Master's,Full-time,87039.48,Southeast,Suburban
+P0061,55,Female,Some college,Full-time,50142.61,Southeast,Suburban
+P0062,36,Female,Bachelor's,Full-time,38500.06,Southeast,Suburban
+P0063,32,Female,High school,Full-time,92089.17,Northeast,Suburban
+P0064,58,Female,Bachelor's,Full-time,58952.66,Southwest,Urban
+P0065,59,Female,Master's,Unemployed,90723.14,Southeast,Urban
+P0066,62,Female,High school,Full-time,36825.98,Northeast,Suburban
+P0067,69,Female,Bachelor's,Part-time,46853.0,Southwest,Suburban
+P0068,64,Female,Bachelor's,Unemployed,95660.75,Southwest,Rural
+P0069,65,Female,Bachelor's,Student,71487.78,West,Suburban
+P0070,33,Male,High school,Full-time,47021.15,Midwest,Urban
+P0071,52,Male,High school,Full-time,70753.76,Southwest,Suburban
+P0072,52,Female,High school,Unemployed,74506.26,Southwest,Rural
+P0073,55,Non-binary,High school,Unemployed,39731.74,Midwest,Urban
+P0074,42,Female,PhD,Full-time,50531.82,West,Suburban
+P0075,32,Female,Some college,Full-time,36947.54,Southwest,Suburban
+P0076,71,Female,High school,Part-time,83030.01,Northeast,Rural
+P0077,55,Female,High school,Part-time,78111.38,Northeast,Urban
+P0078,38,Male,Some college,Student,80437.49,Southwest,Urban
+P0079,71,Male,Master's,Full-time,61955.88,Midwest,Urban
+P0080,22,Female,Bachelor's,Student,54804.35,Southeast,Urban
+P0081,19,Female,Some college,Full-time,102232.18,Southwest,Suburban
+P0082,67,Male,Bachelor's,Retired,97196.06,Northeast,Suburban
+P0083,28,Non-binary,High school,Full-time,49441.14,Southwest,Urban
+P0084,63,Male,Bachelor's,Unemployed,92614.64,Southeast,Urban
+P0085,67,Male,Bachelor's,Student,70139.9,Northeast,Urban
+P0086,45,Female,High school,Part-time,34767.82,Northeast,Rural
+P0087,70,Female,Bachelor's,Full-time,80963.72,Southeast,Suburban
+P0088,64,Female,Bachelor's,Part-time,46625.39,West,Suburban
+P0089,47,Male,Master's,Full-time,86732.76,Northeast,Urban
+P0090,46,Male,Bachelor's,Part-time,28717.63,Southwest,Urban
+P0091,49,Female,High school,Full-time,67940.78,West,Suburban
+P0092,35,Female,Bachelor's,Full-time,42831.71,Southeast,Suburban
+P0093,49,Female,Some college,Full-time,56303.42,Northeast,Urban
+P0094,32,Male,Some college,Student,38696.62,Midwest,Suburban
+P0095,51,Male,PhD,Part-time,47557.74,Midwest,Urban
+P0096,25,Female,Some college,Student,81409.83,Southeast,Urban
+P0097,65,Female,Bachelor's,Retired,44269.33,Northeast,Rural
+P0098,36,Male,High school,Full-time,59233.19,West,Urban
+P0099,20,Non-binary,Bachelor's,Student,93080.33,Southwest,Urban
+P0100,18,Female,Bachelor's,Full-time,93584.11,Southeast,Rural
+P0101,34,Non-binary,Bachelor's,Student,54994.3,Northeast,Urban
+P0102,69,Female,Some college,Retired,67042.51,Northeast,Suburban
+P0103,44,Female,Master's,Full-time,38166.6,Southwest,Urban
+P0104,55,Prefer not to say,Some college,Part-time,58596.92,West,Rural
+P0105,24,Non-binary,Some college,Full-time,55138.31,Southeast,Suburban
+P0106,28,Male,Bachelor's,Part-time,51123.15,Midwest,Urban
+P0107,36,Female,Bachelor's,Full-time,42857.65,West,Suburban
+P0108,30,Male,Bachelor's,Part-time,15880.64,Midwest,Rural
+P0109,22,Male,Master's,Part-time,84303.47,Southwest,Urban
+P0110,62,Male,Bachelor's,Full-time,17705.55,West,Suburban
+P0111,23,Female,Master's,Student,57995.54,Southeast,Rural
+P0112,71,Female,Bachelor's,Full-time,58945.34,Midwest,Suburban
+P0113,66,Female,Bachelor's,Student,74031.92,West,Suburban
+P0114,70,Female,High school,Full-time,54993.37,Midwest,Urban
+P0115,24,Female,Some college,Student,49390.56,West,Urban
+P0116,23,Male,Some college,Retired,113497.8,Southwest,Rural
+P0117,70,Prefer not to say,Bachelor's,Part-time,49874.27,Midwest,Suburban
+P0118,49,Female,Master's,Full-time,69352.54,West,Urban
+P0119,36,Male,Bachelor's,Full-time,91716.28,Southeast,Suburban
+P0120,37,Female,Bachelor's,Full-time,56938.04,Northeast,Suburban
+P0121,25,Female,High school,Retired,53057.05,Southwest,Rural
+P0122,48,Male,Bachelor's,Full-time,95212.8,West,Suburban
+P0123,26,Female,Some college,Student,17827.55,West,Urban
+P0124,18,Male,Some college,Part-time,88145.09,Southwest,Rural
+P0125,46,Female,Some college,Part-time,38645.36,Midwest,Rural
+P0126,62,Male,Bachelor's,Unemployed,55463.97,Southwest,Urban
+P0127,65,Female,PhD,Full-time,100906.99,Southeast,Suburban
+P0128,20,Male,PhD,Full-time,59162.68,Northeast,Rural
+P0129,46,Male,PhD,Full-time,89472.05,Southeast,Urban
+P0130,68,Non-binary,Some college,Student,97031.3,Northeast,Rural
+P0131,72,Female,Bachelor's,Retired,29855.32,Southwest,Rural
+P0132,20,Female,Some college,Student,29120.21,Midwest,Rural
+P0133,65,Male,PhD,Student,59107.25,Southeast,Suburban
+P0134,19,Male,Master's,Full-time,52296.05,Midwest,Suburban
+P0135,33,Female,Bachelor's,Student,66299.72,Southwest,Suburban
+P0136,33,Female,Bachelor's,Full-time,69819.27,Midwest,Suburban
+P0137,60,Male,Master's,Unemployed,56332.28,Southwest,Rural
+P0138,55,Male,PhD,Student,50410.31,Southwest,Rural
+P0139,30,Prefer not to say,Master's,Full-time,46754.99,Midwest,Rural
+P0140,36,Male,Master's,Full-time,76072.05,Northeast,Suburban
+P0141,61,Female,PhD,Unemployed,60737.93,Midwest,Suburban
+P0142,32,Female,Some college,Part-time,20407.18,West,Urban
+P0143,66,Female,Bachelor's,Unemployed,29059.87,Northeast,Urban
+P0144,46,Male,Some college,Full-time,27687.15,Midwest,Urban
+P0145,44,Male,High school,Part-time,88633.81,Midwest,Rural
+P0146,34,Female,PhD,Retired,57177.22,Midwest,Suburban
+P0147,39,Female,Bachelor's,Full-time,62410.32,Southwest,Rural
+P0148,69,Female,High school,Full-time,46273.1,Midwest,Suburban
+P0149,47,Male,Master's,Full-time,38982.81,Midwest,Urban
+P0150,32,Female,Bachelor's,Retired,83337.16,Midwest,Rural
+P0151,32,Female,Bachelor's,Full-time,52364.45,Northeast,Urban
+P0152,20,Male,Bachelor's,Full-time,31647.36,West,Urban
+P0153,47,Male,PhD,Student,33657.16,Southeast,Rural
+P0154,59,Male,Bachelor's,Full-time,54686.24,Midwest,Urban
+P0155,41,Male,Bachelor's,Full-time,21737.85,Midwest,Suburban
+P0156,59,Male,Bachelor's,Full-time,109029.5,Northeast,Rural
+P0157,70,Female,Bachelor's,Part-time,58254.05,Midwest,Urban
+P0158,26,Female,Some college,Student,59379.73,West,Urban
+P0159,31,Female,Some college,Student,69121.25,Midwest,Rural
+P0160,27,Prefer not to say,Bachelor's,Student,33249.67,Northeast,Suburban
+P0161,19,Male,Some college,Student,58671.78,Midwest,Urban
+P0162,65,Male,High school,Full-time,59921.34,Southwest,Suburban
+P0163,50,Female,Bachelor's,Full-time,35414.81,West,Urban
+P0164,59,Non-binary,High school,Full-time,38530.27,Southwest,Suburban
+P0165,24,Female,Master's,Full-time,88322.63,Northeast,Urban
+P0166,57,Female,Bachelor's,Full-time,76641.71,West,Suburban
+P0167,47,Female,Bachelor's,Student,86144.14,West,Suburban
+P0168,31,Male,Master's,Full-time,83128.46,Southwest,Urban
+P0169,64,Male,Bachelor's,Student,53085.97,Southwest,Urban
+P0170,71,Male,Bachelor's,Student,70992.68,Midwest,Rural
+P0171,53,Male,PhD,Part-time,51100.0,Southwest,Rural
+P0172,64,Male,Some college,Full-time,42169.06,Northeast,Suburban
+P0173,31,Male,Bachelor's,Unemployed,45499.25,Northeast,Suburban
+P0174,54,Male,Bachelor's,Part-time,84677.15,West,Suburban
+P0175,59,Female,Bachelor's,Student,60145.41,Midwest,Suburban
+P0176,37,Female,Some college,Full-time,56999.91,Southeast,Suburban
+P0177,43,Male,Master's,Retired,84680.0,Southwest,Suburban
+P0178,39,Male,Some college,Full-time,76747.01,West,Suburban
+P0179,21,Male,Master's,Full-time,82745.17,Southwest,Suburban
+P0180,46,Male,Some college,Part-time,73674.69,Midwest,Suburban
+P0181,36,Female,Bachelor's,Part-time,56427.02,West,Urban
+P0182,31,Male,Some college,Full-time,76494.69,Midwest,Urban
+P0183,25,Male,Master's,Full-time,36956.49,West,Suburban
+P0184,60,Female,High school,Unemployed,85456.07,Northeast,Suburban
+P0185,47,Female,Master's,Part-time,31022.15,Southwest,Urban
+P0186,43,Male,Some college,Student,46606.36,West,Suburban
+P0187,62,Female,High school,Unemployed,63231.43,West,Urban
+P0188,37,Female,Some college,Student,91306.81,Northeast,Suburban
+P0189,25,Female,High school,Student,29102.92,Southeast,Urban
+P0190,27,Male,High school,Full-time,106627.19,Northeast,Urban
+P0191,67,Female,Bachelor's,Part-time,32798.28,West,Suburban
+P0192,57,Male,PhD,Full-time,46073.08,Southwest,Urban
+P0193,46,Female,Master's,Part-time,56837.63,Southwest,Suburban
+P0194,21,Male,Some college,Part-time,68926.05,Northeast,Suburban
+P0195,50,Male,Bachelor's,Retired,61557.1,West,Suburban
+P0196,38,Female,Bachelor's,Retired,55647.73,Southwest,Urban
+P0197,71,Male,Bachelor's,Part-time,69762.32,Southwest,Rural
+P0198,51,Female,High school,Full-time,76673.61,Midwest,Urban
+P0199,67,Male,Bachelor's,Student,57114.13,Northeast,Suburban
+P0200,42,Male,Bachelor's,Student,55509.18,West,Rural
+P0201,39,Male,Bachelor's,Unemployed,50124.17,Southwest,Urban
+P0202,63,Non-binary,Some college,Full-time,91867.79,Midwest,Rural
+P0203,60,Female,PhD,Retired,70307.65,Southwest,Suburban
+P0204,19,Male,High school,Full-time,56905.33,Southwest,Urban
+P0205,26,Male,Some college,Student,34624.0,West,Urban
+P0206,39,Female,Bachelor's,Part-time,60676.27,Southeast,Urban
+P0207,71,Female,Bachelor's,Unemployed,60815.8,Midwest,Suburban
+P0208,33,Non-binary,Bachelor's,Student,55531.33,Southwest,Urban
+P0209,33,Male,Master's,Full-time,72738.35,West,Rural
+P0210,47,Female,Master's,Part-time,43871.94,Southwest,Rural
+P0211,70,Male,Bachelor's,Unemployed,85840.08,Midwest,Suburban
+P0212,24,Female,Bachelor's,Full-time,70108.74,Northeast,Suburban
+P0213,35,Male,Bachelor's,Unemployed,102529.95,Southwest,Rural
+P0214,19,Male,Bachelor's,Full-time,88337.44,Southwest,Rural
+P0215,41,Male,Some college,Full-time,57626.6,Southeast,Urban
+P0216,36,Female,Bachelor's,Unemployed,42603.88,Southwest,Suburban
+P0217,18,Female,High school,Full-time,92822.12,West,Suburban
+P0218,25,Female,Some college,Full-time,104154.84,Southeast,Suburban
+P0219,68,Female,High school,Unemployed,34734.45,West,Suburban
+P0220,63,Male,Bachelor's,Part-time,62029.26,Southeast,Suburban
+P0221,29,Female,High school,Retired,86490.2,West,Suburban
+P0222,50,Female,Bachelor's,Full-time,73090.99,Southwest,Rural
+P0223,34,Female,Some college,Full-time,63793.8,Northeast,Suburban
+P0224,65,Female,High school,Full-time,94138.15,Midwest,Rural
+P0225,29,Female,Bachelor's,Retired,48169.95,Southeast,Urban
+P0226,67,Non-binary,High school,Full-time,63876.97,Southeast,Rural
+P0227,38,Non-binary,Bachelor's,Retired,45795.32,Southeast,Urban
+P0228,67,Male,Bachelor's,Full-time,57508.77,Midwest,Suburban
+P0229,43,Female,Master's,Full-time,87410.98,Southwest,Urban
+P0230,69,Female,Master's,Student,57766.12,Northeast,Suburban
+P0231,70,Male,Some college,Full-time,53338.4,Southwest,Suburban
+P0232,45,Male,Bachelor's,Full-time,78255.07,Midwest,Suburban
+P0233,45,Male,PhD,Retired,89921.85,Midwest,Suburban
+P0234,65,Female,PhD,Full-time,76235.99,West,Suburban
+P0235,46,Male,High school,Student,47570.95,West,Urban
+P0236,27,Female,PhD,Full-time,78093.73,Northeast,Suburban
+P0237,51,Male,Some college,Full-time,66887.0,Southeast,Suburban
+P0238,42,Female,High school,Student,60762.24,Southwest,Urban
+P0239,57,Male,PhD,Full-time,92902.14,Southwest,Urban
+P0240,63,Male,High school,Student,91998.04,Midwest,Suburban
+P0241,63,Male,Bachelor's,Unemployed,82637.62,Southeast,Suburban
+P0242,50,Male,PhD,Student,34100.02,Southeast,Suburban
+P0243,19,Male,Bachelor's,Full-time,73533.6,Northeast,Urban
+P0244,43,Prefer not to say,Bachelor's,Part-time,60764.22,Southwest,Rural
+P0245,22,Male,Some college,Full-time,36054.47,Southeast,Rural
+P0246,67,Female,Bachelor's,Student,67657.06,Southeast,Suburban
+P0247,21,Female,Bachelor's,Full-time,89003.28,Southeast,Urban
+P0248,51,Female,Master's,Full-time,105735.87,West,Urban
+P0249,58,Male,Bachelor's,Part-time,87654.73,Southeast,Urban
+P0250,57,Female,Bachelor's,Unemployed,107732.88,West,Urban
+P0251,19,Male,PhD,Student,60607.94,West,Suburban
+P0252,58,Male,Master's,Part-time,77074.23,Midwest,Suburban
+P0253,69,Female,Bachelor's,Full-time,57144.64,Southwest,Suburban
+P0254,31,Male,High school,Unemployed,50042.16,Midwest,Suburban
+P0255,40,Non-binary,High school,Full-time,44140.22,Southwest,Urban
+P0256,46,Male,High school,Full-time,54713.58,Southwest,Rural
+P0257,44,Male,Master's,Full-time,48493.49,Midwest,Urban
+P0258,28,Female,Bachelor's,Full-time,87534.26,Midwest,Suburban
+P0259,23,Non-binary,Bachelor's,Retired,66459.44,Northeast,Urban
+P0260,56,Female,Bachelor's,Full-time,82035.78,West,Urban
+P0261,24,Male,Master's,Student,63826.11,Southwest,Urban
+P0262,53,Male,Bachelor's,Full-time,41078.88,West,Suburban
+P0263,53,Male,PhD,Student,105884.69,Southwest,Urban
+P0264,39,Female,Some college,Full-time,102597.8,West,Suburban
+P0265,50,Male,High school,Student,70857.48,Southeast,Suburban
+P0266,50,Male,PhD,Full-time,36886.61,Southwest,Rural
+P0267,65,Female,Bachelor's,Part-time,36522.9,West,Urban
+P0268,70,Male,Some college,Full-time,60443.06,Southwest,Suburban
+P0269,68,Female,Master's,Part-time,47822.46,West,Suburban
+P0270,64,Male,Bachelor's,Part-time,52114.22,West,Suburban
+P0271,42,Male,Bachelor's,Full-time,72058.41,Northeast,Suburban
+P0272,44,Male,Bachelor's,Full-time,58605.95,West,Rural
+P0273,72,Female,High school,Full-time,67166.17,Southwest,Suburban
+P0274,38,Non-binary,Bachelor's,Part-time,80810.82,West,Urban
+P0275,67,Female,Bachelor's,Student,59718.73,Southeast,Urban
+P0276,37,Male,PhD,Full-time,87211.3,Midwest,Suburban
+P0277,62,Female,Some college,Full-time,97839.6,Midwest,Urban
+P0278,54,Female,Some college,Retired,46142.12,Midwest,Rural
+P0279,69,Male,High school,Retired,105914.61,Midwest,Suburban
+P0280,31,Male,Bachelor's,Retired,85794.68,Midwest,Urban
+P0281,57,Female,Some college,Full-time,75023.94,Southeast,Urban
+P0282,44,Male,Bachelor's,Student,53170.96,Southeast,Urban
+P0283,53,Non-binary,High school,Student,80294.1,Southeast,Suburban
+P0284,36,Male,Bachelor's,Unemployed,44960.21,Northeast,Suburban
+P0285,32,Female,Bachelor's,Retired,73670.16,Southeast,Rural
+P0286,20,Prefer not to say,Bachelor's,Full-time,54921.91,Midwest,Rural
+P0287,18,Male,Bachelor's,Unemployed,49667.79,West,Suburban
+P0288,26,Female,Bachelor's,Full-time,82840.05,Northeast,Urban
+P0289,64,Female,Some college,Full-time,58731.93,West,Suburban
+P0290,30,Male,Master's,Unemployed,23224.08,Southwest,Suburban
+P0291,23,Male,High school,Retired,10958.04,Northeast,Urban
+P0292,33,Male,Some college,Full-time,69279.37,West,Suburban
+P0293,18,Male,Some college,Full-time,49839.84,Southeast,Suburban
+P0294,50,Female,Master's,Student,40591.63,Northeast,Suburban
+P0295,36,Male,Some college,Retired,37988.82,West,Urban
+P0296,62,Female,Bachelor's,Part-time,65312.4,Southeast,Suburban
+P0297,61,Female,Master's,Full-time,29585.82,Northeast,Rural
+P0298,25,Male,Bachelor's,Part-time,73269.24,West,Suburban
+P0299,28,Male,Bachelor's,Full-time,70049.13,Northeast,Rural
+P0300,46,Female,Bachelor's,Part-time,89968.45,Southwest,Suburban
+P0301,53,Female,Master's,Student,29843.62,Southeast,Suburban
+P0302,20,Male,Bachelor's,Part-time,86637.44,Northeast,Rural
+P0303,22,Prefer not to say,Bachelor's,Full-time,67054.69,Southwest,Urban
+P0304,42,Male,PhD,Full-time,72738.49,Northeast,Suburban
+P0305,60,Female,High school,Unemployed,112814.88,Southwest,Suburban
+P0306,64,Non-binary,Master's,Student,108903.66,Midwest,Suburban
+P0307,64,Female,Bachelor's,Student,62317.02,Midwest,Urban
+P0308,64,Female,High school,Student,82277.95,West,Suburban
+P0309,19,Male,High school,Part-time,30992.33,Northeast,Urban
+P0310,20,Male,Some college,Full-time,72847.32,Northeast,Urban
+P0311,36,Male,PhD,Part-time,28537.73,Midwest,Urban
+P0312,27,Prefer not to say,Bachelor's,Full-time,44289.42,Midwest,Urban
+P0313,55,Female,PhD,Part-time,38906.5,Midwest,Rural
+P0314,60,Male,Bachelor's,Student,73367.31,Southwest,Urban
+P0315,42,Male,Bachelor's,Full-time,68701.39,Southeast,Rural
+P0316,21,Female,PhD,Part-time,104911.95,Southeast,Urban
+P0317,34,Male,Bachelor's,Unemployed,67554.15,Southeast,Urban
+P0318,42,Female,Bachelor's,Unemployed,54058.42,Southeast,Rural
+P0319,55,Female,Bachelor's,Full-time,75504.77,Northeast,Urban
+P0320,30,Non-binary,High school,Retired,47523.27,Southwest,Rural
+P0321,62,Female,Some college,Unemployed,25989.75,Southwest,Suburban
+P0322,59,Male,Some college,Part-time,49777.19,Southwest,Suburban
+P0323,69,Prefer not to say,Bachelor's,Unemployed,80179.76,Southwest,Urban
+P0324,32,Female,High school,Part-time,51145.04,West,Suburban
+P0325,44,Male,High school,Full-time,47041.04,West,Suburban
+P0326,61,Male,Master's,Full-time,54985.0,Southwest,Suburban
+P0327,64,Female,High school,Student,13059.81,West,Rural
+P0328,21,Female,Master's,Full-time,65599.2,Northeast,Suburban
+P0329,44,Male,Bachelor's,Full-time,71004.38,Southwest,Urban
+P0330,57,Female,PhD,Unemployed,74563.6,Southwest,Urban
+P0331,52,Female,High school,Part-time,52618.13,Northeast,Suburban
+P0332,62,Female,Master's,Unemployed,121865.82,Northeast,Rural
+P0333,51,Male,High school,Part-time,68912.84,Southwest,Urban
+P0334,43,Female,Some college,Student,46084.23,Midwest,Suburban
+P0335,72,Male,PhD,Part-time,83985.4,Southwest,Suburban
+P0336,21,Female,Bachelor's,Full-time,66435.6,Southwest,Suburban
+P0337,39,Female,Master's,Full-time,55613.44,Southeast,Rural
+P0338,62,Female,Bachelor's,Full-time,60858.09,Northeast,Suburban
+P0339,35,Female,Bachelor's,Full-time,79234.96,Southeast,Suburban
+P0340,66,Female,Master's,Unemployed,53726.07,Midwest,Urban
+P0341,33,Female,Master's,Student,41048.44,Southeast,Suburban
+P0342,62,Female,Bachelor's,Retired,56541.56,Northeast,Urban
+P0343,32,Female,Some college,Student,83233.6,Midwest,Urban
+P0344,35,Female,Bachelor's,Full-time,55810.58,West,Rural
+P0345,45,Male,Bachelor's,Full-time,64555.76,Southeast,Suburban
+P0346,23,Male,Some college,Student,43769.23,Southeast,Suburban
+P0347,38,Male,High school,Retired,26981.61,Northeast,Urban
+P0348,29,Male,Bachelor's,Part-time,74673.09,Northeast,Urban
+P0349,40,Female,Bachelor's,Student,64271.74,Southwest,Urban
+P0350,23,Female,Bachelor's,Retired,59380.99,Southeast,Suburban
+P0351,28,Female,High school,Full-time,60574.04,Southeast,Suburban
+P0352,44,Male,Master's,Full-time,74274.63,Southeast,Suburban
+P0353,49,Female,High school,Full-time,43938.26,Midwest,Rural
+P0354,42,Female,Some college,Full-time,112508.7,West,Urban
+P0355,38,Female,Bachelor's,Full-time,71737.61,Midwest,Urban
+P0356,62,Female,PhD,Student,81920.4,Midwest,Urban
+P0357,70,Female,Some college,Retired,85446.63,Southeast,Suburban
+P0358,53,Male,Bachelor's,Retired,133854.03,Southeast,Suburban
+P0359,36,Female,High school,Unemployed,71185.95,Southeast,Suburban
+P0360,33,Male,High school,Full-time,30415.54,Southwest,Urban
+P0361,56,Female,Bachelor's,Part-time,91615.24,West,Urban
+P0362,41,Female,Master's,Part-time,45813.79,Northeast,Urban
+P0363,33,Female,Some college,Part-time,122655.07,Southwest,Rural
+P0364,39,Non-binary,Bachelor's,Full-time,79331.64,Midwest,Urban
+P0365,65,Female,Bachelor's,Part-time,41344.25,West,Suburban
+P0366,27,Male,High school,Full-time,69322.59,Southwest,Rural
+P0367,23,Male,PhD,Full-time,52805.23,Southeast,Suburban
+P0368,40,Female,Bachelor's,Student,84440.89,Midwest,Urban
+P0369,20,Female,High school,Unemployed,42215.65,Southeast,Rural
+P0370,65,Male,High school,Full-time,35487.04,West,Suburban
+P0371,47,Male,Bachelor's,Full-time,47135.84,Northeast,Suburban
+P0372,30,Male,Bachelor's,Full-time,43921.85,Southeast,Urban
+P0373,66,Female,Master's,Part-time,70354.18,Midwest,Urban
+P0374,47,Male,Bachelor's,Full-time,36012.25,Midwest,Suburban
+P0375,57,Male,High school,Full-time,48932.27,Midwest,Rural
+P0376,55,Male,High school,Full-time,65543.12,Midwest,Urban
+P0377,41,Female,Bachelor's,Full-time,76019.92,Southeast,Suburban
+P0378,52,Female,Bachelor's,Retired,78492.13,West,Urban
+P0379,36,Male,Some college,Full-time,81583.66,Northeast,Suburban
+P0380,30,Female,PhD,Part-time,68858.12,Southwest,Suburban
+P0381,49,Male,Master's,Full-time,66781.95,Southeast,Urban
+P0382,35,Male,Some college,Student,64734.37,West,Suburban
+P0383,67,Female,Bachelor's,Part-time,58911.47,Midwest,Suburban
+P0384,66,Male,Bachelor's,Part-time,89362.37,Southwest,Urban
+P0385,71,Female,Some college,Unemployed,78829.12,Northeast,Suburban
+P0386,25,Female,Some college,Student,65455.42,West,Suburban
+P0387,63,Female,Bachelor's,Part-time,70758.38,Northeast,Suburban
+P0388,52,Male,Bachelor's,Full-time,22642.26,Midwest,Urban
+P0389,35,Non-binary,Bachelor's,Unemployed,66729.0,Southwest,Rural
+P0390,35,Female,High school,Unemployed,51105.93,Southeast,Urban
+P0391,38,Female,Master's,Student,33187.28,Midwest,Suburban
+P0392,42,Female,Bachelor's,Unemployed,63911.14,Northeast,Suburban
+P0393,65,Male,PhD,Full-time,80640.49,Northeast,Rural
+P0394,72,Female,Master's,Full-time,55976.22,Midwest,Rural
+P0395,68,Female,Some college,Full-time,66130.46,Midwest,Urban
+P0396,54,Male,Master's,Student,78900.92,Northeast,Urban
+P0397,58,Female,Bachelor's,Full-time,76859.61,Northeast,Rural
+P0398,45,Male,Bachelor's,Full-time,43488.34,Midwest,Urban
+P0399,35,Male,Some college,Full-time,45712.15,Northeast,Urban
+P0400,37,Female,Master's,Full-time,34651.74,Northeast,Suburban
+P0401,18,Male,High school,Part-time,38301.98,Northeast,Suburban
+P0402,70,Male,Master's,Student,59090.28,Southwest,Urban
+P0403,42,Male,Master's,Full-time,49507.95,Southwest,Suburban
+P0404,66,Female,Bachelor's,Student,75717.9,Northeast,Suburban
+P0405,18,Female,High school,Full-time,70406.3,Southwest,Suburban
+P0406,46,Female,High school,Full-time,97561.03,Northeast,Suburban
+P0407,42,Male,Bachelor's,Student,62440.14,Southeast,Suburban
+P0408,56,Female,Some college,Retired,93642.84,Northeast,Rural
+P0409,60,Female,Some college,Part-time,70248.96,Northeast,Suburban
+P0410,68,Non-binary,Bachelor's,Full-time,82327.72,Southwest,Suburban
+P0411,22,Female,PhD,Retired,72710.95,West,Suburban
+P0412,52,Female,Master's,Retired,57278.76,Northeast,Urban
+P0413,22,Male,Some college,Unemployed,83021.15,Midwest,Suburban
+P0414,50,Female,Bachelor's,Full-time,54976.54,West,Suburban
+P0415,27,Male,Some college,Part-time,73585.81,West,Urban
+P0416,55,Female,Master's,Student,100256.03,Northeast,Urban
+P0417,45,Female,Master's,Full-time,82127.04,Southwest,Suburban
+P0418,21,Male,Master's,Student,74111.06,Northeast,Urban
+P0419,26,Female,High school,Retired,23944.47,Midwest,Urban
+P0420,26,Female,Master's,Student,56460.55,Northeast,Suburban
+P0421,19,Male,Bachelor's,Part-time,57141.94,Northeast,Suburban
+P0422,50,Male,Bachelor's,Part-time,121575.12,Midwest,Urban
+P0423,67,Male,Bachelor's,Student,65548.7,Northeast,Rural
+P0424,18,Male,Bachelor's,Full-time,87992.51,Southeast,Urban
+P0425,72,Male,Master's,Student,53239.15,Southeast,Suburban
+P0426,64,Male,Master's,Part-time,48985.47,Northeast,Suburban
+P0427,21,Male,Master's,Retired,69970.85,Southwest,Rural
+P0428,67,Female,Some college,Part-time,59634.17,Northeast,Urban
+P0429,36,Female,Some college,Part-time,33307.12,Southwest,Rural
+P0430,67,Male,Master's,Student,68617.1,Southeast,Urban
+P0431,44,Male,Bachelor's,Part-time,60937.43,Midwest,Urban
+P0432,60,Male,Master's,Full-time,59135.81,Southeast,Suburban
+P0433,33,Male,PhD,Retired,73156.47,Northeast,Rural
+P0434,72,Female,Bachelor's,Full-time,75902.89,Northeast,Suburban
+P0435,50,Male,Master's,Full-time,40594.18,Southeast,Urban
+P0436,34,Female,PhD,Full-time,52282.93,Midwest,Urban
+P0437,35,Male,PhD,Full-time,63334.21,Northeast,Urban
+P0438,47,Male,High school,Full-time,51516.3,Southeast,Suburban
+P0439,47,Male,High school,Full-time,45900.55,West,Urban
+P0440,71,Female,High school,Student,24109.33,Midwest,Urban
+P0441,21,Female,Some college,Retired,83970.5,Southwest,Suburban
+P0442,53,Male,Bachelor's,Student,66346.11,Southeast,Urban
+P0443,21,Female,PhD,Full-time,71480.06,Northeast,Suburban
+P0444,34,Female,High school,Retired,43004.57,Southeast,Rural
+P0445,46,Female,High school,Unemployed,66067.6,Southwest,Urban
+P0446,54,Male,Bachelor's,Full-time,51512.78,Southwest,Suburban
+P0447,29,Male,Master's,Full-time,50230.78,West,Suburban
+P0448,33,Female,Bachelor's,Unemployed,66152.88,Southwest,Urban
+P0449,35,Male,Bachelor's,Part-time,66866.91,West,Suburban
+P0450,42,Female,Some college,Part-time,46072.35,Southwest,Urban
+P0451,54,Female,Bachelor's,Full-time,55512.42,Midwest,Urban
+P0452,48,Female,Master's,Retired,76043.03,Southeast,Urban
+P0453,60,Male,Bachelor's,Student,58963.51,Southeast,Suburban
+P0454,69,Male,PhD,Retired,24734.71,Southeast,Urban
+P0455,55,Male,Master's,Full-time,33219.4,Midwest,Rural
+P0456,54,Male,PhD,Unemployed,43336.43,Southwest,Suburban
+P0457,29,Female,High school,Full-time,67238.03,Northeast,Urban
+P0458,57,Male,High school,Student,88384.42,Midwest,Urban
+P0459,27,Female,PhD,Student,86886.2,Northeast,Urban
+P0460,60,Male,High school,Full-time,26104.12,Southeast,Rural
+P0461,64,Non-binary,Master's,Retired,53942.58,West,Suburban
+P0462,57,Female,Some college,Part-time,51029.18,Southeast,Urban
+P0463,64,Female,High school,Student,112866.97,Southwest,Rural
+P0464,67,Non-binary,High school,Part-time,45043.03,West,Urban
+P0465,54,Male,Bachelor's,Full-time,79925.78,Midwest,Urban
+P0466,23,Female,Bachelor's,Student,71535.48,Midwest,Suburban
+P0467,34,Male,Bachelor's,Full-time,70096.38,Northeast,Urban
+P0468,64,Male,High school,Full-time,27822.37,Southwest,Urban
+P0469,42,Male,Bachelor's,Unemployed,42451.81,Southeast,Suburban
+P0470,69,Female,Some college,Full-time,34746.62,Northeast,Urban
+P0471,28,Female,High school,Full-time,118782.8,Midwest,Suburban
+P0472,57,Female,Bachelor's,Full-time,40271.66,Southeast,Suburban
+P0473,45,Male,High school,Full-time,74521.76,West,Urban
+P0474,36,Male,High school,Full-time,93617.21,West,Rural
+P0475,27,Male,High school,Full-time,75799.98,Southwest,Urban
+P0476,19,Male,Bachelor's,Retired,34445.72,Southwest,Rural
+P0477,37,Female,Bachelor's,Unemployed,59032.12,Southwest,Urban
+P0478,42,Male,Bachelor's,Full-time,93387.6,Southwest,Urban
+P0479,71,Male,High school,Student,57384.05,Midwest,Rural
+P0480,44,Non-binary,Bachelor's,Part-time,53911.11,Southwest,Rural
+P0481,44,Non-binary,Bachelor's,Retired,47525.97,Midwest,Urban
+P0482,72,Female,Bachelor's,Unemployed,54885.06,West,Suburban
+P0483,57,Male,PhD,Full-time,74630.88,Southeast,Rural
+P0484,26,Male,High school,Student,57813.47,Southeast,Rural
+P0485,58,Male,Bachelor's,Full-time,56275.69,Northeast,Urban
+P0486,43,Female,Master's,Part-time,22485.69,Northeast,Suburban
+P0487,57,Female,Master's,Full-time,78773.38,West,Suburban
+P0488,24,Female,Bachelor's,Full-time,84977.8,Midwest,Rural
+P0489,40,Female,Some college,Student,39604.0,Southeast,Urban
+P0490,27,Female,Bachelor's,Full-time,51111.38,Southwest,Rural
+P0491,39,Female,High school,Full-time,59525.82,Midwest,Rural
+P0492,37,Male,Master's,Unemployed,83092.32,Northeast,Rural
+P0493,32,Male,PhD,Full-time,69994.16,Southwest,Suburban
+P0494,23,Male,Some college,Student,46509.21,Southwest,Suburban
+P0495,41,Female,Bachelor's,Full-time,52199.42,Southeast,Suburban
+P0496,51,Female,High school,Full-time,86252.03,Southeast,Rural
+P0497,33,Male,High school,Full-time,68628.76,Southwest,Suburban
+P0498,58,Female,Bachelor's,Full-time,82019.51,Southwest,Suburban
+P0499,29,Non-binary,Bachelor's,Part-time,38584.28,Midwest,Suburban
+P0500,62,Male,High school,Full-time,96807.35,West,Suburban

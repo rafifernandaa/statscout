@@ -1,0 +1,16 @@
+product_id,product_name,category,unit_price_usd,cost_of_goods_usd,margin_pct,competitor_avg_price_usd,price_tier,is_seasonal
+PROD001,Sourdough Loaf,Bread,8.5,3.2,62.4,7.77,Regular,No
+PROD002,Croissant,Pastry,3.75,1.1,70.7,3.44,Regular,No
+PROD003,Cinnamon Roll,Pastry,4.25,1.4,67.1,4.44,Regular,No
+PROD004,Baguette,Bread,3.5,1.05,70.0,3.88,Regular,No
+PROD005,Blueberry Muffin,Muffin,3.25,0.95,70.8,3.43,Regular,No
+PROD006,Chocolate Éclair,Pastry,4.75,1.6,66.3,4.23,Regular,No
+PROD007,Almond Tart,Tart,5.5,2.0,63.6,6.0,Premium,No
+PROD008,Focaccia,Bread,7.0,2.8,60.0,7.23,Regular,No
+PROD009,Pumpkin Pie Slice,Pie,5.0,1.8,64.0,5.32,Seasonal,Yes
+PROD010,Macaron (6-pack),Cookie,9.5,3.5,63.2,10.1,Premium,No
+PROD011,Banana Bread Slice,Bread,3.0,0.85,71.7,3.36,Regular,No
+PROD012,Lemon Tart,Tart,5.25,1.95,62.9,5.19,Premium,No
+PROD013,Pretzel,Bread,2.75,0.7,74.5,2.59,Regular,No
+PROD014,Red Velvet Cupcake,Cake,4.5,1.55,65.6,4.67,Regular,No
+PROD015,Gingerbread Cookie,Cookie,2.5,0.6,76.0,2.13,Seasonal,Yes

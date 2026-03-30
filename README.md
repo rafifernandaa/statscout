@@ -1,49 +1,72 @@
 # StatScout 📊
 
-**Academic Dataset Intelligence Agent** — Gen AI Academy APAC Track 2 Submission
+**Academic Dataset Intelligence Agent** — Gen AI Academy APAC Track 2
 
 > *Turning Uncertainty Into Insight — one dataset at a time.*
 
-StatScout is an AI agent that discovers and analyzes public research datasets from [OSF (Open Science Framework)](https://osf.io). Built with Google ADK, Gemini 2.5 Flash, and a custom Python MCP server.
+StatScout discovers and analyzes public research datasets from [OSF (Open Science Framework)](https://osf.io) using Google ADK, Gemini 2.5 Flash, and a custom Python MCP server.
+
+---
+
+## Project Structure
+
+```
+launchmybakery/
+├── data/                            # Pre-generated reference CSVs (loaded into BigQuery)
+│   ├── demographics.csv             # 500 participant records
+│   ├── bakery_prices.csv            # 15 product price/margin records
+│   ├── sales_history_weekly.csv     # 52-week × 15 product sales history
+│   └── foot_traffic.csv             # 365-day × 6 hourly slot foot traffic
+├── adk_agent/
+│   └── mcp_bakery_app/
+│       ├── agent.py                 # LlmAgent + MCPToolset + Runner
+│       └── tools.py                 # Custom MCP server (3 OSF tools)
+├── setup/
+│   ├── setup_env.sh                 # Export GCP environment variables
+│   └── setup_bigquery.sh            # Provision BQ dataset + upload CSVs
+├── cleanup/
+│   └── cleanup_env.sh               # Tear down all GCP resources
+├── main.py                          # FastAPI entry point
+├── requirements.txt
+├── Dockerfile
+└── README.md
+```
 
 ---
 
 ## Architecture
 
 ```
-User → FastAPI (Cloud Run)
-         └→ StatScout Agent (gemini-2.5-flash)
+User → POST /analyze (FastAPI · Cloud Run)
+         └→ agent.py  (LlmAgent · gemini-2.5-flash)
                └→ MCPToolset (stdio transport)
-                     └→ statscout_server.py (custom MCP server)
-                           ├→ OSF REST API v2        [search_osf_projects]
-                           ├→ OSF File Storage API   [get_dataset_files]
-                           └→ OSF CSV Downloads      [fetch_csv_preview]
-                                  └→ pandas (descriptive stats)
+                     └→ tools.py (custom MCP server)
+                           ├→ search_osf_projects  → OSF REST API v2
+                           ├→ get_dataset_files    → OSF File Storage API
+                           └→ fetch_csv_preview    → OSF CSV download + pandas stats
 ```
 
-### MCP Tools
+### MCP Tools (tools.py)
 
-| Tool | Description |
-|------|-------------|
-| `search_osf_projects` | Search OSF by keyword, returns matching project IDs + titles |
-| `get_dataset_files` | List CSV files in a given OSF project |
-| `fetch_csv_preview` | Download CSV (≤5 MB), compute descriptive stats via pandas |
+| Tool | Input | What it does |
+|------|-------|-------------|
+| `search_osf_projects` | `query`, `limit` | Searches OSF by keyword, returns project IDs + titles |
+| `get_dataset_files` | `project_id` | Lists CSV files in an OSF project |
+| `fetch_csv_preview` | `file_url`, `rows` | Downloads CSV (≤5 MB), computes descriptive stats via pandas |
 
 ---
 
 ## Local Setup
 
-### 1. Clone and create virtual environment
+### 1. Clone and create venv
 
 ```bash
 git clone <your-repo-url>
-cd statscout
+cd launchmybakery
 
 python -m venv .venv
-# macOS/Linux:
-source .venv/bin/activate
-# Windows:
-.venv\Scripts\activate
+source .venv/bin/activate        # macOS/Linux
+# .venv\Scripts\activate         # Windows
 ```
 
 ### 2. Install dependencies
@@ -55,31 +78,34 @@ pip install -r requirements.txt
 ### 3. Set environment variables
 
 ```bash
-export GOOGLE_CLOUD_PROJECT="your-gcp-project-id"
-export GOOGLE_CLOUD_LOCATION="us-central1"
+# Edit PROJECT_ID in setup/setup_env.sh first, then:
+source setup/setup_env.sh
 ```
 
-### 4. Authenticate with Google Cloud
+### 4. Authenticate
 
 ```bash
 gcloud auth application-default login
 ```
 
-### 5. Run locally
+### 5. (Optional) Load data into BigQuery
+
+```bash
+bash setup/setup_bigquery.sh
+```
+
+### 6. Run locally
 
 ```bash
 python main.py
+# → http://localhost:8080
 ```
 
-Server starts at `http://localhost:8080`
-
-### 6. Test
+### 7. Test
 
 ```bash
-# Health check
 curl http://localhost:8080/health
 
-# Analyze a dataset
 curl -X POST http://localhost:8080/analyze \
   -H "Content-Type: application/json" \
   -d '{"query": "anxiety coping mechanisms"}'
@@ -89,61 +115,39 @@ curl -X POST http://localhost:8080/analyze \
 
 ## Cloud Run Deployment
 
-### 1. Set variables
-
 ```bash
-PROJECT_ID="your-gcp-project-id"
-REGION="us-central1"
-SERVICE_NAME="statscout"
-```
+source setup/setup_env.sh
 
-### 2. Enable required APIs
+# Enable APIs
+gcloud services enable run.googleapis.com cloudbuild.googleapis.com aiplatform.googleapis.com \
+  --project="${PROJECT_ID}"
 
-```bash
-gcloud services enable run.googleapis.com \
-  cloudbuild.googleapis.com \
-  aiplatform.googleapis.com \
-  --project=$PROJECT_ID
-```
-
-### 3. Create a service account
-
-```bash
+# Create service account
 gcloud iam service-accounts create statscout-sa \
-  --display-name="StatScout Service Account" \
-  --project=$PROJECT_ID
+  --display-name="StatScout SA" --project="${PROJECT_ID}"
 
-# Grant Vertex AI access
-gcloud projects add-iam-policy-binding $PROJECT_ID \
-  --member="serviceAccount:statscout-sa@$PROJECT_ID.iam.gserviceaccount.com" \
+gcloud projects add-iam-policy-binding "${PROJECT_ID}" \
+  --member="serviceAccount:statscout-sa@${PROJECT_ID}.iam.gserviceaccount.com" \
   --role="roles/aiplatform.user"
-```
 
-### 4. Build and deploy
-
-```bash
-gcloud run deploy $SERVICE_NAME \
+# Deploy
+gcloud run deploy "${SERVICE_NAME}" \
   --source . \
-  --region $REGION \
-  --service-account statscout-sa@$PROJECT_ID.iam.gserviceaccount.com \
-  --set-env-vars GOOGLE_CLOUD_PROJECT=$PROJECT_ID,GOOGLE_CLOUD_LOCATION=$REGION \
+  --region "${REGION}" \
+  --service-account "statscout-sa@${PROJECT_ID}.iam.gserviceaccount.com" \
+  --set-env-vars "GOOGLE_CLOUD_PROJECT=${PROJECT_ID},GOOGLE_CLOUD_LOCATION=${REGION}" \
   --allow-unauthenticated \
   --memory 1Gi \
   --timeout 120 \
-  --project $PROJECT_ID
+  --project "${PROJECT_ID}"
 ```
 
-> **Note:** `--memory 1Gi` is recommended because pandas loads CSVs in-memory. `--timeout 120` accommodates OSF network latency.
+---
 
-### 5. Test deployment
+## Cleanup
 
 ```bash
-SERVICE_URL=$(gcloud run services describe $SERVICE_NAME \
-  --region $REGION --format 'value(status.url)')
-
-curl -X POST $SERVICE_URL/analyze \
-  -H "Content-Type: application/json" \
-  -d '{"query": "reading comprehension children"}'
+bash cleanup/cleanup_env.sh
 ```
 
 ---
@@ -157,25 +161,21 @@ curl -X POST $SERVICE_URL/analyze \
 
 🔑 Key Variables:
 • age (int) — participant age
-• GAD7_total (float) — Generalized Anxiety Disorder 7-item scale score
-• coping_strategy (str) — self-reported primary coping approach
-• stress_level (float) — perceived stress score
+• GAD7_total (float) — GAD-7 scale total score
+• coping_strategy (str) — self-reported coping approach
 
 📈 Summary Statistics:
 • GAD7_total: mean = 8.4, SD = 3.1, range = 0–21
-  → Average score falls in the mild anxiety range (≥5 threshold)
-• stress_level: mean = 18.7, SD = 4.9, range = 4–40
-  → Moderate stress levels; high variance suggests heterogeneous sample
+• stress_level: mean = 18.7, SD = 4.9
 
 🔬 Potential Research Uses:
-1. IRT calibration of GAD7 items to evaluate differential item functioning
-2. Regression/moderation analysis: does coping strategy moderate stress→anxiety?
-3. Latent profile analysis to identify anxiety–coping subgroups
+1. IRT calibration of GAD-7 items
+2. Moderation analysis: coping strategy × stress → anxiety
+3. Latent profile analysis for anxiety subgroups
 
 ⚠️ Limitations:
-• 8.3% missing data on coping_strategy — may bias group comparisons
-• Cross-sectional design limits causal inference
-• Sample skews younger (mean age 23); generalizability to older adults is limited
+• 8.3% missing on coping_strategy
+• Cross-sectional — no causal inference
 
 🔗 OSF Link: https://osf.io/abc12/
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -183,48 +183,19 @@ curl -X POST $SERVICE_URL/analyze \
 
 ---
 
-## Project Structure
-
-```
-statscout/
-├── main.py                          # FastAPI entry point
-├── statscout/
-│   ├── __init__.py
-│   ├── agent.py                     # ADK agent + manual agentic loop
-│   └── mcp_server/
-│       ├── __init__.py
-│       └── statscout_server.py      # Custom Python MCP server (3 tools)
-├── requirements.txt
-├── Dockerfile
-└── README.md
-```
-
----
-
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
+| Layer | Tech |
+|-------|------|
 | AI Model | Gemini 2.5 Flash (Vertex AI) |
-| Agent Framework | Google ADK + google-genai |
-| MCP Server | Python `mcp` SDK (stdio transport) |
+| Agent Framework | Google ADK — `LlmAgent` + `MCPToolset` + `Runner` |
+| MCP Transport | stdio (`StdioServerParameters`) |
 | External Data | OSF REST API v2 |
-| Data Processing | pandas |
+| CSV Analysis | pandas |
 | HTTP Client | httpx |
 | Web Framework | FastAPI + Uvicorn |
 | Deployment | Google Cloud Run |
 
 ---
 
-## Track 2 Compliance Checklist
-
-- [x] AI agent built with ADK
-- [x] Uses MCP to connect to an external tool/data source (OSF REST API)
-- [x] Retrieves structured data (CSV stats via pandas)
-- [x] Uses retrieved data to generate a final response (StatScout Report)
-- [x] Deployed on Cloud Run
-- [x] GitHub repo included in submission
-
----
-
-*Built by Rafi Fernanda Aldin — Gen AI Academy APAC Track 2*
+*Built by Rafi Fernanda Aldin · Gen AI Academy APAC Track 2*

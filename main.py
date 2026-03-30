@@ -1,18 +1,18 @@
 """
-StatScout — FastAPI entry point
-Same pattern as Track 1: thin HTTP layer, delegates to agent.py
+StatScout — FastAPI entry point (main.py)
+Thin HTTP layer at the project root. Delegates all logic to agent.py.
 """
 
 import os
+
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
-from statscout.agent import run_agent
+from adk_agent.mcp_bakery_app.agent import run_agent
 
 app = FastAPI(
     title="StatScout",
-    description="Academic Dataset Intelligence Agent powered by Gemini + MCP",
+    description="Academic Dataset Intelligence Agent powered by Gemini 2.5 Flash + MCP",
     version="1.0.0",
 )
 
@@ -53,10 +53,7 @@ async def analyze(request: QueryRequest):
     try:
         report = run_agent(query)
     except Exception as e:
-        raise HTTPException(
-            status_code=500,
-            detail=f"Agent error: {str(e)}",
-        )
+        raise HTTPException(status_code=500, detail=f"Agent error: {str(e)}")
 
     return QueryResponse(query=query, report=report)
 
