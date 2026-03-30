@@ -1,159 +1,72 @@
 """
-StatScout Agent — agent.py
-ADK-native MCPToolset (stdio → tools.py) wired into
-LlmAgent + Runner + InMemorySessionService.
-Exposed via FastAPI in main.py at the project root.
+agent.py — StatScout root agent
+Follows the official launchmybakery ADK pattern:
+  - tools.py returns MCPToolset instances via factory functions
+  - PROJECT_ID is resolved at import time via os.getenv and injected
+    into the instruction via f-string (safe — Python resolves it before
+    ADK ever sees the string, so no context variable errors)
+  - root_agent is a module-level variable so `adk web` and `adk run` find it
 """
 
-import asyncio
-import sys
-import uuid
-from pathlib import Path
+import os
 
+import dotenv
 from google.adk.agents import LlmAgent
-from google.adk.runners import Runner
-from google.adk.sessions import InMemorySessionService
-from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset
-from google.genai import types
-from mcp import StdioServerParameters
 
-# ─────────────────────────────────────────────
-# Config
-# ─────────────────────────────────────────────
+from . import tools
 
-MODEL = "gemini-2.5-flash-preview-04-17"
-APP_NAME = "statscout"
+# ── Load env (reads .env file if present) ────────────────────────────────────
+dotenv.load_dotenv()
 
-# tools.py lives alongside agent.py in mcp_bakery_app/
-TOOLS_PATH = Path(__file__).parent / "tools.py"
+PROJECT_ID = os.getenv("GOOGLE_CLOUD_PROJECT", "project_not_set")
+DATASET_ID = os.getenv("BQ_DATASET", "statscout_data")
+MODEL      = os.getenv("STATSCOUT_MODEL", "gemini-2.5-flash")
 
-SYSTEM_PROMPT = """You are StatScout, an academic dataset intelligence agent.
-Your job is to help researchers discover and understand datasets from OSF (Open Science Framework).
+# ── MCP toolset (BigQuery hosted MCP server) ─────────────────────────────────
+bigquery_toolset = tools.get_bigquery_mcp_toolset()
 
-When a user asks you to find or analyze a dataset, follow these steps:
-1. Use search_osf_projects to find relevant projects.
-2. Pick the most relevant project and use get_dataset_files to list its CSV files.
-3. Use fetch_csv_preview on the most suitable CSV file (prefer smaller files if multiple exist).
-4. Generate a structured StatScout Report using the data returned.
+# ── Root agent ────────────────────────────────────────────────────────────────
+# PROJECT_ID is a plain Python variable resolved at import time.
+# Using an f-string means ADK receives a fully-resolved string with no {{ }}
+# placeholders — this is why the official example uses f-strings here.
+root_agent = LlmAgent(
+    model=MODEL,
+    name="statscout_agent",
+    instruction=f"""You are StatScout, an academic dataset intelligence agent.
+Your job is to help researchers discover and understand public datasets by querying
+the BigQuery dataset `{PROJECT_ID}.{DATASET_ID}`.
 
-Your report must follow this exact format:
+The dataset contains these tables:
+- `demographics`         — participant demographics (age, gender, education, income, region)
+- `bakery_prices`        — product price/margin/competitor benchmarks
+- `sales_history_weekly` — 52-week sales data per product (units, revenue, promotions)
+- `foot_traffic`         — hourly visitor counts, dwell time, conversion rates
 
-📊 StatScout Report — {Dataset Title} (OSF: {project_id})
+When answering a question:
+1. Identify which table(s) are relevant.
+2. Use the BigQuery toolset to run SQL queries against `{PROJECT_ID}.{DATASET_ID}`.
+3. Interpret the results statistically — compute means, ranges, trends, or comparisons as needed.
+4. Present your findings as a concise StatScout Report in this format:
+
+📊 StatScout Report — [topic]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📁 Variables: {n_cols} | Observations: {n_rows} | Format: CSV
+📁 Source: BigQuery — {PROJECT_ID}.{DATASET_ID}.[table]
 
-🔑 Key Variables:
-{list the most interesting columns with their types}
+📈 Key Findings:
+[bullet points with numbers, means, ranges — grounded in query results]
 
-📈 Summary Statistics:
-{for each numeric variable: mean, SD, min, max — interpreted in plain language}
+🔬 Statistical Interpretation:
+[brief plain-language interpretation of the patterns]
 
-🔬 Potential Research Uses:
-{2-3 concrete research questions or analysis approaches this dataset supports}
-
-⚠️ Limitations:
-{missing data, sample size concerns, measurement notes}
-
-🔗 OSF Link: https://osf.io/{project_id}/
+⚠️ Caveats:
+[sample size, time range, any data quality notes]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Rules:
-- If a file is too large or not a CSV, note it and try another file.
-- If no datasets are found, suggest refining the search query.
-- Always be concise, statistician-friendly, and grounded only in the actual data the tools return.
-- Never fabricate variable names or statistics.
-"""
-
-
-# ─────────────────────────────────────────────
-# Agent factory
-# ─────────────────────────────────────────────
-
-def build_agent() -> tuple[LlmAgent, MCPToolset]:
-    """
-    Spin up MCPToolset pointing at tools.py (stdio transport),
-    wire it into an LlmAgent, and return both so the caller
-    can call toolset.close() after the request completes.
-    """
-    toolset = MCPToolset(
-        connection_params=StdioServerParameters(
-            command=sys.executable,
-            args=[str(TOOLS_PATH)],
-        ),
-    )
-
-    agent = LlmAgent(
-        name="statscout_agent",
-        model=MODEL,
-        instruction=SYSTEM_PROMPT,
-        tools=[toolset],
-        generate_content_config=types.GenerateContentConfig(
-            temperature=0.2,
-        ),
-    )
-
-    return agent, toolset
-
-
-# ─────────────────────────────────────────────
-# Async runner (one fresh session per request)
-# ─────────────────────────────────────────────
-
-async def run_statscout(user_query: str) -> str:
-    """
-    Execute the StatScout agent for a single user query.
-    Stateless — creates a new session per call, safe for Cloud Run.
-    """
-    agent, toolset = build_agent()
-    session_service = InMemorySessionService()
-
-    user_id = "statscout-user"
-    session_id = str(uuid.uuid4())
-
-    # Session must exist before Runner.run_async (avoids SessionNotFoundError)
-    await session_service.create_session(
-        app_name=APP_NAME,
-        user_id=user_id,
-        session_id=session_id,
-    )
-
-    runner = Runner(
-        app_name=APP_NAME,
-        agent=agent,
-        session_service=session_service,
-    )
-
-    message = types.Content(
-        role="user",
-        parts=[types.Part(text=user_query)],
-    )
-
-    final_response = ""
-
-    try:
-        async for event in runner.run_async(
-            user_id=user_id,
-            session_id=session_id,
-            new_message=message,
-        ):
-            if event.is_final_response():
-                if event.content and event.content.parts:
-                    final_response = "".join(
-                        part.text
-                        for part in event.content.parts
-                        if hasattr(part, "text") and part.text
-                    )
-                break
-    finally:
-        await toolset.close()
-
-    return final_response or "StatScout could not generate a report. Please try a more specific query."
-
-
-# ─────────────────────────────────────────────
-# Sync wrapper for FastAPI
-# ─────────────────────────────────────────────
-
-def run_agent(user_query: str) -> str:
-    """Synchronous entry point called from main.py FastAPI handler."""
-    return asyncio.run(run_statscout(user_query))
+- Only query `{PROJECT_ID}.{DATASET_ID}`. Do not use any other dataset.
+- Run all query jobs from project id: {PROJECT_ID}.
+- Never fabricate numbers — only report what the query returns.
+- If a query fails, explain the error and suggest a fix.
+""",
+    tools=[bigquery_toolset],
+)
