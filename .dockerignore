@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+.venv/
+venv/
+
+# Env files (sensitive)
+.env
+
+# Git
+.git
+.gitignore
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+
+# Cache / temp
+.cache/
+.tmp/
+
+# Local data (penting untuk kamu)
+data/
+
+# ADK local state (hindari konflik runtime)
+.adk/
+adk_agent/**/.adk/
+
+# Build artifacts
+dist/
+build/
