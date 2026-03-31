@@ -1,11 +1,3 @@
-"""
-main.py — StatScout FastAPI (Cloud Run)
-
-Uses ADK's native BigQueryToolset — no MCPToolset, no cancel scope issues.
-ADK Runner still runs in a dedicated thread (asyncio.run) to keep it
-isolated from FastAPI's event loop, which is best practice regardless.
-"""
-
 import asyncio
 import concurrent.futures
 import os
