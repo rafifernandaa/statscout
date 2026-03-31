@@ -41,6 +41,7 @@ echo "    Granting roles..."
 for ROLE in \
   roles/aiplatform.user \
   roles/bigquery.user \
+  roles/bigquery.jobUser \
   roles/bigquery.dataViewer; do
   gcloud projects add-iam-policy-binding "${PROJECT_ID}" \
     --member="serviceAccount:${SA_EMAIL}" \
@@ -63,11 +64,9 @@ gcloud run deploy "${SERVICE_NAME}" \
   --allow-unauthenticated \
   --memory 1Gi \
   --cpu 1 \
-  --timeout 120 \
-  --min-instances 0 \
-  --max-instances 5 \
-  --port 8080 \
-  --project "${PROJECT_ID}"
+  --timeout 300 \
+  --project "${PROJECT_ID}" \ 
+  --concurrency 1
 
 # ── Step 5: Smoke test ────────────────────────────────────────────────────────
 echo "==> [5/5] Running smoke test..."
