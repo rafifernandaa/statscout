@@ -73,7 +73,8 @@ BigQuery — statscout_data dataset
 ```
 statscout/
 ├── main.py                          # FastAPI app + thread-isolated ADK runner
-├── Dockerfile                       # Container build
+├── Dockerfile
+├── .dockerignore                      # Container build
 ├── requirements.txt                 # Python dependencies
 ├── templates/
 │   └── index.html                   # Frontend UI
