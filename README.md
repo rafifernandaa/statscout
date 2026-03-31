@@ -2,7 +2,7 @@
 
 > *Turning Uncertainty Into Insight — one dataset at a time.*
 
-StatScout is an AI-powered dataset intelligence agent built for the **Gen AI Academy APAC** competition (Track 2). It lets researchers query and explore public BigQuery datasets using natural language, powered by Google ADK and Gemini.
+StatScout is an AI-powered dataset intelligence agent. It lets researchers query and explore public BigQuery datasets using natural language, powered by Google ADK and Gemini.
 
 ---
 
@@ -263,5 +263,3 @@ Health check endpoint. Returns `{"status": "ok"}`.
 
 ---
 *"Turning Uncertainty Into Insight"*
-
-Built for **Gen AI Academy APAC — Track 2**
